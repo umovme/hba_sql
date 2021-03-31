@@ -114,7 +114,6 @@ DECLARE
     query TEXT;
 BEGIN
     IF backup IS TRUE THEN
-        PERFORM @extschema@.load(hba_file);
         EXECUTE 
             format(
                 'COPY @extschema@.lines TO %L',
